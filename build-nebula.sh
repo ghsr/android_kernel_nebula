@@ -33,7 +33,8 @@ echo ""
 tput sgr0
 echo -e "\n\n >> >> COMPILE NEBULA KERNEL FOR? \n\n"
 echo -e "1. I9082 - GALAXY GRAND"
-echo -e "2. S2VEP - GALAXY S2 PLUS"
+echo -e "2. S2VE  - GALAXY S2 PLUS"
+echo -e "3. S2VEP - GALAXY S2 PLUS (NFC)"
 echo ""
 read askDevice
 
@@ -70,7 +71,15 @@ VERSION=3.20
 
 if [ "$askDevice" == "2" ]
 	then
-		KERNEL_BUILD="nebula-v$VERSION-s2vep-s2ve-xenon92-`date '+%Y%m%d-%H%M'`"
+		KERNEL_BUILD="nebula-v$VERSION-s2ve-xenon92-`date '+%Y%m%d-%H%M'`"
+
+		# Fixing s2ve vibrations
+		patch -p1 < patch_files/s2vep_fix_vibrations.diff
+		patch -p1 < patch_files/s2vep_updater_script.diff
+
+elif [ "$askDevice" == "3" ]
+	then
+		KERNEL_BUILD="nebula-v$VERSION-s2vep-xenon92-`date '+%Y%m%d-%H%M'`"
 
 		# Fixing s2vep vibrations
 		patch -p1 < patch_files/s2vep_fix_vibrations.diff
@@ -110,6 +119,16 @@ echo ""
 
 $cyan
 if [ "$askDevice" == "2" ]
+
+	then
+		echo ""
+		echo ""
+	    echo -e "\n\n >> >> MAKING CONFIG FOR S2VE \n\n"
+		echo ""
+		echo ""
+	        make nebula_s2ve_defconfig
+
+elif [ "$askDevice" == "3" ]
 
 	then
 		echo ""
