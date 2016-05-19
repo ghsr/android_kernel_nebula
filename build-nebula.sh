@@ -33,8 +33,7 @@ echo ""
 tput sgr0
 echo -e "\n\n >> >> COMPILE NEBULA KERNEL FOR? \n\n"
 echo -e "1. I9082 - GALAXY GRAND"
-echo -e "2. S2VE  - GALAXY S2 PLUS"
-echo -e "3. S2VEP - GALAXY S2 PLUS (NFC)"
+echo -e "2. S2VEP - GALAXY S2 PLUS (NFC)"
 echo ""
 read askDevice
 
@@ -70,11 +69,6 @@ TOOLCHAIN=~/kernel/toolchains/linaro-4.9.4-15.06/bin/arm-cortex_a9-linux-gnueabi
 VERSION=3.21
 
 if [ "$askDevice" == "2" ]
-	then
-		KERNEL_BUILD="nebula-v$VERSION-s2ve-xenon92-`date '+%Y%m%d-%H%M'`"
-		patch -p1 < patch_files/s2vep_updater_script.diff
-
-elif [ "$askDevice" == "3" ]
 	then
 		KERNEL_BUILD="nebula-v$VERSION-s2vep-xenon92-`date '+%Y%m%d-%H%M'`"
 		patch -p1 < patch_files/s2vep_updater_script.diff
@@ -117,20 +111,11 @@ if [ "$askDevice" == "2" ]
 	then
 		echo ""
 		echo ""
-	    echo -e "\n\n >> >> MAKING CONFIG FOR S2VE \n\n"
-		echo ""
-		echo ""
-	        make nebula_s2ve_defconfig
-
-elif [ "$askDevice" == "3" ]
-
-	then
-		echo ""
-		echo ""
 	    echo -e "\n\n >> >> MAKING CONFIG FOR S2VEP \n\n"
 		echo ""
 		echo ""
-	        make nebula_s2vep_defconfig
+	        make nebula_galaxys2plus_defconfig
+
 	else
 		echo ""
 		echo ""
