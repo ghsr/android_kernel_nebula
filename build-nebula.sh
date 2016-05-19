@@ -44,7 +44,7 @@ clear
 
 
 # Export paths and variables in shell
-export PATH=$PATH:~/kernel/toolchains/linaro-4.9.3-15.03/bin
+export PATH=$PATH:~/kernel/toolchains/linaro-4.9.4-15.06/bin
 export ARCH=arm
 export SUBARCH=arm
 export CROSS_COMPILE=arm-cortex_a9-linux-gnueabihf-
@@ -65,7 +65,7 @@ date="date"
 
 # Kernel compilation specific details
 export KBUILD_BUILD_USER="shubhang"
-TOOLCHAIN=~/kernel/toolchains/linaro-4.9.3-15.03/bin/arm-cortex_a9-linux-gnueabihf-
+TOOLCHAIN=~/kernel/toolchains/linaro-4.9.4-15.06/bin/arm-cortex_a9-linux-gnueabihf-
 
 VERSION=3.21
 
