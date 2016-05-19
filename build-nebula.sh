@@ -291,7 +291,6 @@ if [ "$compilationSuccessful" == "1" ]
 		cp -avr system/lib/modules/ outputzip/system/lib/
 		cp -avr kernel/ outputzip/
 		# cp ../bootimg_processing/outputbootimg/boot.img outputzip/boot.img
-		# cp ../performance_control_app/PerformanceControl-2.1.11.apk outputzip/system/app/PerformanceControl-2.1.11.apk
 
 		echo ""
 		echo ""
