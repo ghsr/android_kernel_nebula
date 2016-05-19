@@ -1,4 +1,4 @@
-From 21123815f2d9dfd9cdde06b3c3bbb1fea566e784 Mon Sep 17 00:00:00 2001
+From 240c7b553b4325d074c796404eda487575184637 Mon Sep 17 00:00:00 2001
 From: Shubhang <shubhang92@gmail.com>
 Date: Sat, 10 May 2014 17:45:03 +0530
 Subject: [PATCH] updater-script: add support of s2vep
@@ -18,5 +18,5 @@ index c357f06..e43f47d 100644
  ui_print("");
  ui_print("........nebula  kernel........");
 -- 
-1.9.1
+2.8.2
 

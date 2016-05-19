@@ -72,17 +72,11 @@ VERSION=3.21
 if [ "$askDevice" == "2" ]
 	then
 		KERNEL_BUILD="nebula-v$VERSION-s2ve-xenon92-`date '+%Y%m%d-%H%M'`"
-
-		# Fixing s2ve vibrations
-		patch -p1 < patch_files/s2vep_fix_vibrations.diff
 		patch -p1 < patch_files/s2vep_updater_script.diff
 
 elif [ "$askDevice" == "3" ]
 	then
 		KERNEL_BUILD="nebula-v$VERSION-s2vep-xenon92-`date '+%Y%m%d-%H%M'`"
-
-		# Fixing s2vep vibrations
-		patch -p1 < patch_files/s2vep_fix_vibrations.diff
 		patch -p1 < patch_files/s2vep_updater_script.diff
 
 	else
